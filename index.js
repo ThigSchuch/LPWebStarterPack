@@ -1,9 +1,24 @@
 var display = document.getElementById('display');
 
-
-var btnNumerais = document.querySelectorAll("tbody .number");
-
-btnNumerais.
+console.log(display)
 
 
-console.log(btnNumerais);
+for (let number of document.querySelectorAll(".number")) {
+    number.addEventListener('click', function(e) {
+        console.log(this.value);
+        console.log(display.value);
+        console.log(display.innerHTML);
+        display.value += `${this.value}`;
+    });
+}
+
+// clean
+document.querySelector("input[name='clean']").onclick = function() {
+    display.value = '0';
+}
+
+// func deus
+document.querySelector("input[name='=']").onclick = function() {
+    var numbers = document.getElementById('display');
+    
+}
