@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<table border="1" class="table rounded">
+<table class="table rounded">
     <tbody>
         <tr rowspan="2">
             <td class="text-center">
@@ -63,13 +63,13 @@
         </tr>
         <tr class="teclado text-center">
             <td><input name="0" class="number" type="button" value=" 0 "></td>
-            <td><input name="." class="rounded dot" type="button" value=","></td>
-            <td><input name="=" class="operator" type="button" value="="></td>
+            <td><input name="." class="rounded dot" type="button" value=" . "></td>
+            <td><input class="rounded clean" name="clean" type="button" value="C"></td>
             <td><input name="+" class="operator" type="button" value=" + "></td>
         </tr>
         <tr>
             <td colspan="4" class="text-right">
-                <input class="rounded w-100 clean" name="clean" type="button" value="Limpar"/>
+                <input name="=" class="operator w-100" type="button" value=" = ">
             </td>
         </tr>
     </tbody>
@@ -77,5 +77,6 @@
     </table>
 
     <script src="index.js"></script>
+
 </body>
 </html>

@@ -10,7 +10,6 @@ for (let number of document.querySelectorAll(".teclado input")) {
     }
 }
 
-
 // clean
 function cleanDisplay() {
     display.value = '';
