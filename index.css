@@ -1,6 +1,45 @@
-table {
+body{
+    padding: 2rem;
+}
+
+.table{
     display: table;
     border-collapse: separate;
     border-spacing: 2px;
-    border-color: gray;
+    border-width: 1px;
+    background: #BDBDBD;
+}
+
+table td, .number, .operator, .dot, .clean, .input{
+    width: 4rem;
+    height: 4rem;
+    font-size: 30px;
+}
+
+.rounded, .number, .operator{
+    border-radius: 5px;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.bg-light{
+    color: white;
+}
+
+.bg-accent{
+    background: #BDBDBD;
+}
+
+.w-100{
+    width: 100%;
 }

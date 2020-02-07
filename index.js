@@ -1,24 +1,26 @@
 var display = document.getElementById('display');
+var output = document.getElementById('output');
 
-console.log(display)
 
-
-for (let number of document.querySelectorAll(".number")) {
-    number.addEventListener('click', function(e) {
-        console.log(this.value);
-        console.log(display.value);
-        console.log(display.innerHTML);
-        display.value += `${this.value}`;
-    });
+for (let number of document.querySelectorAll(".teclado input")) {
+    if ( number.value !== '=' ) {
+        number.addEventListener('click', function() {
+            display.value += `${this.value}`;
+        });
+    }
 }
+
 
 // clean
-document.querySelector("input[name='clean']").onclick = function() {
-    display.value = '0';
+function cleanDisplay() {
+    display.value = '';
+    output
 }
+document.querySelector("input[name='clean']").onclick = cleanDisplay;
 
 // func deus
 document.querySelector("input[name='=']").onclick = function() {
     var numbers = document.getElementById('display');
-    
+    var result = new Function("return "+numbers.value);
+    output.value = result();
 }

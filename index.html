@@ -11,49 +11,66 @@
 </head>
 
 <body>
-<table>
+<table border="1" class="table rounded">
     <tbody>
-        <tr>
+        <tr rowspan="2">
+            <td class="text-center">
+                In
+            </td>
             <td colspan="4">
                 <input
                     id="display"
+                    class="rounded text-right input w-100"
+                    disabled="disabled"
                     maxlength="18"
                     name="tela"
                     type="text"
-                    value="0"
-                    class="text-left"
                 >
             </td>
         </tr>
         <tr>
-            <td colspan="4" align="right">
-                <input name="clean" type="button" value="Limpar">
+            <td class="text-center">
+                Out
+            </td>
+            <td colspan="4">
+                <input
+                    id="output"
+                    class="rounded input w-100 text-right"
+                    disabled="disabled"
+                    maxlength="18"
+                    name="tela"
+                    type="text"
+                >
             </td>
         </tr>
-
-        <tr class="teclado">
+        <tr class="teclado text-center">
             <td><input name="1" class="number" type="button" value=" 1 "></td>
             <td><input name="2" class="number" type="button" value=" 2 "></td>
             <td><input name="3" class="number" type="button" value=" 3 "></td>
             <td><input name="-" class="operator" type="button" value=" - "></td>
         </tr>
-        <tr >
+        <tr class="teclado text-center">
             <td><input name="4" class="number" type="button" value=" 4 "></td>
             <td><input name="5" class="number" type="button" value=" 5 "></td>
             <td><input name="6" class="number" type="button" value=" 6 "></td>
             <td><input name="*" class="operator" type="button" value=" * "></td>
         </tr>
-        <tr class="teclado">
+        <tr class="teclado text-center">
             <td><input name="1" class="number" type="button" value=" 7 "></td>
             <td><input name="8" class="number" type="button" value=" 8 "></td>
             <td><input name="9" class="number" type="button" value=" 9 "></td>
             <td><input name="/" class="operator" type="button" value=" / "></td>
         </tr>
-        <tr class="teclado">
+        <tr class="teclado text-center">
             <td><input name="0" class="number" type="button" value=" 0 "></td>
-            <td><input name="." type="button" value=" . "></td>
-            <td><input name="=" class="operator" type="button" value=" = "></td>
+            <td><input name="." class="rounded dot" type="button" value=","></td>
+            <td><input name="=" class="operator" type="button" value="="></td>
             <td><input name="+" class="operator" type="button" value=" + "></td>
+        </tr>
+        <tr>
+            <td colspan="4" class="text-right">
+                <input class="rounded w-100 clean" name="clean" type="button" value="Limpar"/>
+            </td>
         </tr>
     </tbody>
 
