@@ -20,7 +20,6 @@ document.querySelector("input[name='clean']").onclick = cleanDisplay;
 // func deus
 document.querySelector("input[name='=']").onclick = function() {
     var numbers = document.getElementById('display');
-    var operators  = ['-', '*','/','+']
 
     if (numbers.value) {
         var result = new Function("return "+numbers.value);
