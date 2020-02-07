@@ -3,7 +3,7 @@ var output = document.getElementById('output');
 
 
 for (let number of document.querySelectorAll(".teclado input")) {
-    if ( number.value !== '=' ) {
+    if ( number.value !== ' = ' ) {
         number.addEventListener('click', function() {
             display.value += `${this.value}`;
         });
@@ -13,13 +13,19 @@ for (let number of document.querySelectorAll(".teclado input")) {
 // clean
 function cleanDisplay() {
     display.value = '';
-    output
+    output.value = '';
 }
 document.querySelector("input[name='clean']").onclick = cleanDisplay;
 
 // func deus
 document.querySelector("input[name='=']").onclick = function() {
     var numbers = document.getElementById('display');
-    var result = new Function("return "+numbers.value);
-    output.value = result();
+    var operators  = ['-', '*','/','+']
+
+    if (numbers.value) {
+        var result = new Function("return "+numbers.value);
+        output.value = result();
+    } else {
+        alert('Informe uma entrada!');
+    }
 }
