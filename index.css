@@ -5,13 +5,12 @@ body{
 .table{
     display: table;
     border-collapse: separate;
-    border-spacing: 2px;
-    border-width: 1px;
+    border-spacing: 5px;
     background: #BDBDBD;
 }
 
 table td, .number, .operator, .dot, .clean, .input{
-    width: 4rem;
+    width: 5rem;
     height: 4rem;
     font-size: 30px;
 }
