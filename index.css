@@ -10,9 +10,9 @@ body{
 }
 
 table td, .number, .operator, .dot, .clean, .input{
-    width: 5rem;
+    width: 6rem;
     height: 4rem;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .rounded, .number, .operator{

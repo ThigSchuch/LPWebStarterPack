@@ -1,30 +1,43 @@
-var display = document.getElementById('display');
-var output = document.getElementById('output');
-
-
+// set event on all buttons
 for (let number of document.querySelectorAll(".teclado input")) {
-    if ( number.value !== ' = ' ) {
+    if ( number.value !== "=" ) {
         number.addEventListener('click', function() {
-            display.value += `${this.value}`;
+            let display = document.getElementById('display');
+
+            let [...list] = display.value;
+            let pointExists = list.filter( value => value === '.' ).length > 0;
+
+            if ( !(this.value === '.' && pointExists) ) {
+                display.value += this.value;
+            }
         });
     }
 }
 
-// clean
-function cleanDisplay() {
+// clean display
+document.querySelector("input[name='clean']").onclick = function () {
+    let display = document.getElementById('display');
     display.value = '';
+
+    let output = document.getElementById('output');
     output.value = '';
-}
-document.querySelector("input[name='clean']").onclick = cleanDisplay;
+};
 
 // func deus
 document.querySelector("input[name='=']").onclick = function() {
-    var numbers = document.getElementById('display');
+    let display = document.getElementById('display');
+    let output = document.getElementById('output');
 
-    if (numbers.value) {
-        var result = new Function("return "+numbers.value);
-        output.value = result();
-    } else {
-        alert('Informe uma entrada!');
+    if (display.value) {
+        try {
+            let result = new Function("return "+display.value);
+            output.value = result();
+        } catch (error) {
+            output.value = 'NÃO SUPORTADO';
+            console.error(error);
+        }
+        return;
     }
+
+    output.value = 'Entrada inválida.';
 }
